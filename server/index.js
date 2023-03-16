@@ -25,8 +25,6 @@ app.use("/answer", answerRoutes);
 
 const PORT = process.env.PORT || 5000;
 
-const DATABASE_URL = process.env.CONNECTION_URL;
-console.log(process.env.PORT,process.env.CONNECTION_URL,process.env.JWT_SECRET)
 mongoose.set("strictQuery", true);
 
 mongoose

@@ -6,9 +6,9 @@ import "./HomeMainBar.css";
 import QuestionList from "./QuestionList";
 const HomeMainBar = () => {
   const location = useLocation();
-  const user = 1;
-  const navigate = useNavigate();
 
+  const navigate = useNavigate();
+  const user = useSelector((state) => state.currentUserReducer);
   const questionsList = useSelector((state) => state.questionsReducer);
   // console.log("checking", questionsList);
   // var questionsList = [
@@ -86,21 +86,20 @@ const HomeMainBar = () => {
     }
   };
   return (
-    <div>
-      <div className="main-bar">
-        <div className="main-bar-header">
-          {location.pathname === "/" ? (
-            <h1>Top Questions</h1>
-          ) : (
-            <h1>All Questions</h1>
-          )}
-        </div>
+    <div className="main-bar">
+      <div className="main-bar-header">
+        {location.pathname === "/" ? (
+          <h1>Top Questions</h1>
+        ) : (
+          <h1>All Questions</h1>
+        )}
+
         <button to="/AskQuestions" onClick={checkAuth} className="ask-btn">
           Ask Questions
         </button>
       </div>
       <div>
-        {questionsList.data == null ? (
+        {questionsList.data === null ? (
           <h1>Loading...</h1>
         ) : (
           <>

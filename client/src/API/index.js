@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:5000",
+  baseURL: "https://stack-overflow-mhyb.onrender.com",
 });
 
 export const logIn = (authData) => API.post("/user/login", authData);

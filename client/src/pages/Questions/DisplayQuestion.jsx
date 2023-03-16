@@ -1,19 +1,19 @@
-import React from 'react'
-import LeftSideBar from '../../components/LeftSideBar/LeftSideBar'
-import RightSideBarTest from '../../components/RightSideBar/RightSidebarTest'
-import QuestionDetails from './QuestionDetails'
+import React from "react";
+import LeftSideBar from "../../components/LeftSideBar/LeftSideBar";
+import RightSideBar from "../../components/RightSideBar/RightSideBar";
+
+import QuestionDetails from "./QuestionDetails";
 
 const DisplayQuestion = () => {
   return (
-    
-     <div className="home-container-1">
+    <div className="home-container-1">
       <LeftSideBar />
       <div className="home-container-2">
         <QuestionDetails />
-        <RightSideBarTest />
+        <RightSideBar />
+      </div>
     </div>
-    </div>
-  )
-}
+  );
+};
 
-export default DisplayQuestion
+export default DisplayQuestion;

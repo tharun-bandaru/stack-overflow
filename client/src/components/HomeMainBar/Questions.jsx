@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import moment from "moment";
-import "./HomeMainBar.css";
+
 const Questions = ({ question }) => {
   return (
     <div className="display-question-container">
@@ -22,20 +22,10 @@ const Questions = ({ question }) => {
             {question.questionTags.map((tag) => (
               <p key={tag}>{tag}</p>
             ))}
-            <p
-              className="display-time"
-              style={{
-                fontSize: "15px",
-                padding: "5px",
-                color: "black",
-                backgroundColor: "transparent",
-                position: "absolute",
-                right: "35%",
-              }}
-            >
-              asked {moment(question.askedOn).fromNow()} {question.userPosted}
-            </p>
           </div>
+          <p className="display-time">
+            asked {moment(question.askedOn).fromNow()} {question.userPosted}
+          </p>
         </div>
       </div>
     </div>
